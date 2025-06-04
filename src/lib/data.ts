@@ -11,9 +11,9 @@ export type ImageItem = {
 };
 
 export const images: ImageItem[] = [
-  { title: "Mantequilla", url: "public/ad1.jpg" },
-  { title: "Presentaciones", url: "public/ad2.jpg" },
-  { title: "Pay de Fresa", url: "public/ad3.jpg" },
-  { title: "Pancakes", url: "public/ad4.jpg" },
+  { title: "Mantequilla", url: "ad1.jpg" },
+  { title: "Presentaciones", url: "ad2.jpg" },
+  { title: "Pay de Fresa", url: "ad3.jpg" },
+  { title: "Pancakes", url: "ad4.jpg" },
   // ...
 ];
