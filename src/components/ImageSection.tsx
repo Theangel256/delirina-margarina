@@ -57,7 +57,7 @@ export default function GallerySection() {
                 <CardHeader className="p-0">
                   <div className="w-full h-48 overflow-hidden">
                     <img
-                      src={import.meta.env.BASE_URL + image.url}
+                      src={image.url}
                       alt={image.title}
                       className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                     />
