@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import GlassHeader from "@/components/GlassHeader";
+import HeroSection from "@/components/HeroSection";
+import ImageSection from "@/components/ImageSection";
+import Footer from "@/components/Footer";
+---
+
+<Layout>
+  <GlassHeader client:only="react" />
+  <main class="min-h-screen">
+    <HeroSection client:only="react" />
+    <ImageSection client:only="react" />
+  </main>
+  <Footer client:only="react" />
+</Layout>
