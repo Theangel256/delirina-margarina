@@ -62,34 +62,32 @@ export default function GlassHeader() {
       </div>
 
       {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            id="mobile-menu"
-            className="md:hidden px-4 py-4 border-t border-border/10 backdrop-blur-md bg-background/80 dark:bg-background/40"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+<AnimatePresence>
+  {isMenuOpen && (
+    <motion.div
+      id="mobile-menu"
+      className="md:hidden px-4 py-4 border-t border-border/10 bg-background/90 dark:bg-background/40 origin-top"
+      initial={{ opacity: 0, scaleY: 0 }}
+      animate={{ opacity: 1, scaleY: 1 }}
+      exit={{ opacity: 0, scaleY: 0 }}
+      transition={{ duration: 0.25 }}
+      style={{ willChange: "transform" }}
+    >
+      <nav className="flex flex-col space-y-4 text-sm font-medium">
+        {navItems.map(({ id, label, icon }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className="text-foreground/60 hover:text-foreground/80 transition-colors py-2"
+            onClick={toggleMenu}
           >
-            <nav className="flex flex-col space-y-4 text-sm font-medium">
-              {navItems.map(({ id, label, icon }, index) => (
-                <motion.a
-                  key={id}
-                  href={`#${id}`}
-                  className="text-foreground/60 hover:text-foreground/80 transition-colors py-2"
-                  onClick={toggleMenu}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {icon} {label}
-                </motion.a>
-              ))}
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            {icon} {label}
+          </a>
+        ))}
+      </nav>
+    </motion.div>
+  )}
+</AnimatePresence>
     </header>
   );
 }
