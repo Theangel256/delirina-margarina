@@ -12,6 +12,7 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
+          
           <motion.p
             className="text-sm text-muted-foreground text-center md:text-left"
             whileHover={{ scale: 1.01 }}
