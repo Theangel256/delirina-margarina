@@ -9,7 +9,7 @@ import "yet-another-react-lightbox/styles.css";
 
 type ImageItem = {
   title: string;
-  url: string | { src: string }; // Accept both string and ImageMetadata-like objects
+  url: string;
 };
 
 // Simulación de más imágenes
@@ -57,7 +57,7 @@ export default function GallerySection() {
                 <CardHeader className="p-0">
                   <div className="w-full h-48 overflow-hidden">
                     <img
-                      src={typeof image.url === "string" ? image.url : image.url.src}
+                      src={import.meta.env.BASE_URL + image.url}
                       alt={image.title}
                       className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                     />
@@ -80,7 +80,7 @@ export default function GallerySection() {
           close={() => setLightboxIndex(null)}
           index={lightboxIndex ?? 0}
           slides={visibleImages.map((img) => ({
-            src: typeof img.url === "string" ? img.url : img.url.src,
+            src: img.url,
             alt: img.title,
           }))}
           plugins={[Zoom]}
