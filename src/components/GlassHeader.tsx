@@ -17,7 +17,7 @@ export default function GlassHeader() {
       <div className="container max-w-4xl mx-auto p-4 flex justify-between items-center">
         {/* Logo */}
         <motion.a
-          href={import.meta.env.BASE_URL}
+          href="/"
           className="text-lg font-medium flex items-center"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
