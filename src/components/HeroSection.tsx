@@ -67,7 +67,7 @@ export default function HeroSection() {
               </motion.a>
 
               <motion.a
-                href={personalInfo.github}
+                href={personalInfo.phone}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
